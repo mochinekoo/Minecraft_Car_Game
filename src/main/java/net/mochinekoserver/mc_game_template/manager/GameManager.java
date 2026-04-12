@@ -3,6 +3,8 @@ package net.mochinekoserver.mc_game_template.manager;
 import net.mochinekoserver.mc_game_template.Main;
 import net.mochinekoserver.mc_game_template.status.GameStatus;
 import net.mochinekoserver.mc_game_template.util.PluginUtil;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -61,6 +63,10 @@ public class GameManager extends GameBase {
             //ゲーム開始の処理
             PluginUtil.sendGlobalInfoMessage("ゲーム開始!");
             status = GameStatus.RUNNING;
+            for (Player online : Bukkit.getOnlinePlayers()) {
+                var scoreboardManager = ScoreboardManager.getInstance(online.getUniqueId());
+                scoreboardManager.setScoreboard();
+            }
         }
         else {
             //カウントの処理
