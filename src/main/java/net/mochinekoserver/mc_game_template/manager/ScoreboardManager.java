@@ -124,10 +124,10 @@ public class ScoreboardManager {
     private void updateScoreboard() {
         if (task == null) {
             this.task = new BukkitRunnable() {
-                private final GameManager gameManager = GameManager.getInstance();
-                private final GameStatus gameStatus = gameManager.getStatus();
                 @Override
                 public void run() {
+                    var gameManager = GameManager.getInstance();
+                    var gameStatus = gameManager.getStatus();
                     if (gameStatus == GameStatus.WAITING) {
                         getScore(26).updateScore(ChatColor.GOLD + "現在の人数：" + Bukkit.getOnlinePlayers().size());
                     }
