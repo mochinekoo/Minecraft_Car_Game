@@ -8,6 +8,7 @@ import net.mochinekoserver.mc_game_template.manager.JsonManager;
 import net.mochinekoserver.mc_game_template.manager.ScoreboardManager;
 import net.mochinekoserver.mc_game_template.manager.TeamManager;
 import net.mochinekoserver.mc_game_template.status.FileType;
+import net.mochinekoserver.mc_game_template.util.PluginItemFactory;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,6 +22,8 @@ public final class Main extends JavaPlugin {
         for (Player online : Bukkit.getOnlinePlayers()) {
             var scoreboardManager = ScoreboardManager.getInstance(online.getUniqueId());
             scoreboardManager.setScoreboard();
+            var inventory = online.getInventory();
+            inventory.addItem(PluginItemFactory.createKitSelector());
         }
         for (FileType fileType : FileType.values()) {
             JsonManager.getInstance(fileType).createJson();
@@ -65,6 +68,7 @@ public final class Main extends JavaPlugin {
         pluginManager.registerEvents(new PlayerDeathListener(), this);
         pluginManager.registerEvents(new PlayerJoinQuitListener(), this);
         pluginManager.registerEvents(new PlayerRespawnListener(), this);
+        pluginManager.registerEvents(new PlayerInteractListener(), this);
 
         //other
         pluginManager.registerEvents(new InventoryClickListener(), this);
