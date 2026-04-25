@@ -4,8 +4,10 @@ import net.mochinekoserver.mc_game_template.command.GameStartStopCommand;
 import net.mochinekoserver.mc_game_template.command.GameTeamCommand;
 import net.mochinekoserver.mc_game_template.listener.*;
 import net.mochinekoserver.mc_game_template.manager.GameManager;
+import net.mochinekoserver.mc_game_template.manager.JsonManager;
 import net.mochinekoserver.mc_game_template.manager.ScoreboardManager;
 import net.mochinekoserver.mc_game_template.manager.TeamManager;
+import net.mochinekoserver.mc_game_template.status.FileType;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -19,6 +21,9 @@ public final class Main extends JavaPlugin {
         for (Player online : Bukkit.getOnlinePlayers()) {
             var scoreboardManager = ScoreboardManager.getInstance(online.getUniqueId());
             scoreboardManager.setScoreboard();
+        }
+        for (FileType fileType : FileType.values()) {
+            JsonManager.getInstance(fileType).createJson();
         }
 
         saveDefaultConfig();
