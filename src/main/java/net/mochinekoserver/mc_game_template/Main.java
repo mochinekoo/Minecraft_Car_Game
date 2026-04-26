@@ -1,5 +1,6 @@
 package net.mochinekoserver.mc_game_template;
 
+import net.mochinekoserver.mc_game_template.command.GameKitCommand;
 import net.mochinekoserver.mc_game_template.command.GameStartStopCommand;
 import net.mochinekoserver.mc_game_template.command.GameTeamCommand;
 import net.mochinekoserver.mc_game_template.listener.*;
@@ -49,12 +50,15 @@ public final class Main extends JavaPlugin {
     private void initCommand() {
         var startstop_command = new GameStartStopCommand();
         var team_command = new GameTeamCommand();
+        var kit_command = new GameKitCommand();
 
         getCommand("game_start").setExecutor(startstop_command);
         getCommand("game_stop").setExecutor(startstop_command);
         getCommand("game_team").setExecutor(team_command);
+        getCommand("game_kit").setExecutor(kit_command);
 
         getCommand("game_team").setTabCompleter(team_command);
+        getCommand("game_kit").setTabCompleter(kit_command);
     }
 
     private void initListener() {

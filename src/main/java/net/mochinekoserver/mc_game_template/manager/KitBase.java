@@ -18,4 +18,10 @@ public abstract class KitBase {
         return uuid;
     }
 
+    public KitType getKitType() {
+        return kitType;
+    }
+
+    public abstract void release();
+
 }

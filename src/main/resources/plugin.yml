@@ -13,3 +13,6 @@ commands:
   game_team:
     description: ゲームのチームに関するコマンド
     permission: net.mochinekoserver.mc_game_template.game_team
+  game_kit:
+    description: キットに関するコマンド
+    permission: net.mochinekoserver.mc_game_template.game_kit

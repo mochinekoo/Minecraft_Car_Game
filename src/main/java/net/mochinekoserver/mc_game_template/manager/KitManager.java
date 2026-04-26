@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 
 import javax.annotation.Nonnull;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -25,6 +26,15 @@ public class KitManager {
     public void setKit(@Nonnull UUID uuid, @Nonnull KitBase kit) {
         OfflinePlayer player = Bukkit.getOfflinePlayer(uuid);
         kit_map.put(uuid, kit);
+    }
+
+    public void unSetKit(@Nonnull UUID uuid) {
+        kit_map.get(uuid).release();
+        kit_map.remove(uuid);
+    }
+
+    public List<KitBase> getKitList() {
+        return kit_map.values().stream().toList();
     }
 
     /**
