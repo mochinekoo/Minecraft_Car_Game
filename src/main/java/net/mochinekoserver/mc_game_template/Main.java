@@ -1,9 +1,6 @@
 package net.mochinekoserver.mc_game_template;
 
-import net.mochinekoserver.mc_game_template.command.GameKitCommand;
-import net.mochinekoserver.mc_game_template.command.GameStartStopCommand;
-import net.mochinekoserver.mc_game_template.command.GameTeamCommand;
-import net.mochinekoserver.mc_game_template.command.PlayerCommand;
+import net.mochinekoserver.mc_game_template.command.*;
 import net.mochinekoserver.mc_game_template.listener.*;
 import net.mochinekoserver.mc_game_template.manager.GameManager;
 import net.mochinekoserver.mc_game_template.manager.JsonManager;
@@ -53,12 +50,14 @@ public final class Main extends JavaPlugin {
         var team_command = new GameTeamCommand();
         var kit_command = new GameKitCommand();
         var player_command = new PlayerCommand();
+        var chat_command = new ChatCommand();
 
         getCommand("game_start").setExecutor(startstop_command);
         getCommand("game_stop").setExecutor(startstop_command);
         getCommand("game_team").setExecutor(team_command);
         getCommand("game_kit").setExecutor(kit_command);
         getCommand("suicide").setExecutor(player_command);
+        getCommand("global").setExecutor(chat_command);
 
         getCommand("game_team").setTabCompleter(team_command);
         getCommand("game_kit").setTabCompleter(kit_command);

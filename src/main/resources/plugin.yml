@@ -16,3 +16,7 @@ commands:
   game_kit:
     description: キットに関するコマンド
     permission: net.mochinekoserver.mc_game_template.game_kit
+  suicide:
+    description: 自分をキルするコマンド
+  global:
+    description: 全体メッセージを送るコマンド
