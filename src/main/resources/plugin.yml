@@ -1,22 +1,25 @@
 name: Minecraft_Game_Template_v2
 version: '1.0-SNAPSHOT'
-main: net.mochinekoserver.mc_game_template.Main
+main: net.mochinekoserver.car_game.Main
 api-version: '1.20'
 
 commands:
   game_start:
     description: ゲームを開始するコマンド
-    permission: net.mochinekoserver.mc_game_template.game_start
+    permission: net.mochinekoserver.car_game.game_start
   game_stop:
     description: ゲームを停止するコマンド
-    permission: net.mochinekoserver.mc_game_template.game_stop
+    permission: net.mochinekoserver.car_game.game_stop
   game_team:
     description: ゲームのチームに関するコマンド
-    permission: net.mochinekoserver.mc_game_template.game_team
+    permission: net.mochinekoserver.car_game.game_team
   game_kit:
     description: キットに関するコマンド
-    permission: net.mochinekoserver.mc_game_template.game_kit
+    permission: net.mochinekoserver.car_game.game_kit
   suicide:
     description: 自分をキルするコマンド
   global:
     description: 全体メッセージを送るコマンド
+  car:
+    description: 車に乗るコマンド
+    permission: net.mochinekoserver.car_game.car
