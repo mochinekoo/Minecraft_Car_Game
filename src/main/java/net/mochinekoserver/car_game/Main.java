@@ -51,6 +51,7 @@ public final class Main extends JavaPlugin {
         var kit_command = new GameKitCommand();
         var player_command = new PlayerCommand();
         var chat_command = new ChatCommand();
+        var car_command = new CarCommand();
 
         getCommand("game_start").setExecutor(startstop_command);
         getCommand("game_stop").setExecutor(startstop_command);
@@ -58,6 +59,7 @@ public final class Main extends JavaPlugin {
         getCommand("game_kit").setExecutor(kit_command);
         getCommand("suicide").setExecutor(player_command);
         getCommand("global").setExecutor(chat_command);
+        getCommand("car").setExecutor(car_command);
 
         getCommand("game_team").setTabCompleter(team_command);
         getCommand("game_kit").setTabCompleter(kit_command);
