@@ -1,0 +1,22 @@
+name: Car_Game
+version: '1.0-SNAPSHOT'
+main: mochinekoserver.car_game.Main
+api-version: '1.20'
+
+commands:
+  game_start:
+    description: ゲームを開始するコマンド
+    permission: mochinekoserver.car_game.game_start
+  game_stop:
+    description: ゲームを停止するコマンド
+    permission: mochinekoserver.car_game.game_stop
+  game_team:
+    description: ゲームのチームに関するコマンド
+    permission: mochinekoserver.car_game.game_team
+  game_kit:
+    description: キットに関するコマンド
+    permission: mochinekoserver.car_game.game_kit
+  suicide:
+    description: 自分をキルするコマンド
+  global:
+    description: 全体メッセージを送るコマンド
