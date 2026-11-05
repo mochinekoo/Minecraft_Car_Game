@@ -22,8 +22,8 @@ import java.util.UUID;
 public class ScoreboardManager {
 
     private static final Map<UUID, ScoreboardManager> board_map = new HashMap<>();
-    private static final String SCOREBOARD_NAME = "Game";
-    private static final String DISPLAY_NAME = ChatColor.AQUA + "Game";
+    private static final String SCOREBOARD_NAME = "CarGame";
+    private static final String DISPLAY_NAME = ChatColor.AQUA + "CarGame";
 
     //スコアボード
     private final UUID uuid;
