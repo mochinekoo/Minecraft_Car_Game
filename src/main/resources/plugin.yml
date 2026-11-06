@@ -20,3 +20,5 @@ commands:
     description: 自分をキルするコマンド
   global:
     description: 全体メッセージを送るコマンド
+  car:
+    description: 車に乗るコマンド
